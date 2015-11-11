@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<div class = "account-container" >
+    <h1>Current Positions</h1>
+    <table>
+        <tr>
+            <th>Symbol</th>
+            <th>Volume</th>
+        </tr>
+    
+        <tr ng-repeat="position in accountCtrl.positions">
+            <td>{{position.symbol}}</td>
+            <td>{{position.volume}}</td>
+        </tr>
+        
+    
+        
+    </table>
+</div>

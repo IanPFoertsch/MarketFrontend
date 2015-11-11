@@ -8,7 +8,7 @@ angular.module("myApp")
                     //execute a post request to the server;
                     user = {userIdentifier: 'Ian', password: 'password'};
                     var jsonString = JSON.stringify(user);
-                    console.log("get request executing");
+                   // console.log("get request executing");
                     $http({
                         method: 'POST',
                         url: 'http://localhost:8080/MarketServiceGradle/account/login',

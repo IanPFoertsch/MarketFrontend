@@ -1,29 +1,22 @@
 function MarketService($http){
     var self = this;
-    self.marketStatus = [[]];
+    self.marketStatus = [];
     
-    self.addMarketStatus = function(newMarketStatus){
-        self.marketStatus.push(newMarketStatus);
+    
+    self.addData = function(reports){
+        self.marketStatus.push(reports);
     };
+    
     self.getMostRecentStatus = function(){
-        var indexOfLast = self.marketStatus.length - 1;
-        if(indexOfLast < 1){
-            indexOfLast = 0;
+        //get the last item in the list of status
+        console.log("Getting the most recent status");
+        var index = self.marketStatus.length;
+        if(index === 1){
+            index = 0;
         }
-        return self.marketStatus[0];
+        return self.marketStatus[index];
     };
-    
-    self.update = function () {
-                    $http({
-                        method: 'GET',
-                        url: 'http://localhost:8080/MarketServiceGradle/marketReport'
-                    }).
-                            then(function (response) {
-                                MarketService.addData(response.reports);
-                            }, (function (response) {
-                                alert("Attempt to connect to Market Report Service Failed.");
-                            }));
-                };
+ 
 }
 angular.module("myApp")
         .service("MarketService", [MarketService]);

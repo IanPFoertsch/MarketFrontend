@@ -17,5 +17,10 @@ angular.module("myApp", ["ngRoute"])
                             controller:'marketController',
                             controllerAs:'marketCtrl'        
                         })
+                                .when('/trade', {
+                                templateUrl: 'trade.html',
+                                controller:'tradeController',
+                                controllerAs:'tradeCtrl'        
+                        })
                 .otherwise({redirectTo: '/'});
             }]);

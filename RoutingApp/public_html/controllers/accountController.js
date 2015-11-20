@@ -1,6 +1,6 @@
 angular.module("myApp")
-        .controller('accountController', ['UserService', function ( UserService) {
+        .controller('accountController', ['UserService', 'AccountService', function ( UserService, AccountService) {
                 var self = this;
                 self.user = UserService.getUser();
-                self.positions = UserService.getPositions();
+                self.accountService = AccountService;
             }]);

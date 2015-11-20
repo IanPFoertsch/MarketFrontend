@@ -12,7 +12,7 @@ and open the template in the editor.
             <th>Volume</th>
         </tr>
     
-        <tr ng-repeat="position in accountCtrl.positions">
+        <tr ng-repeat="position in accountCtrl.accountService.positions">
             <td>{{position.symbol}}</td>
             <td>{{position.volume}}</td>
         </tr>

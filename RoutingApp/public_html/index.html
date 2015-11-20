@@ -10,11 +10,15 @@ and open the template in the editor.
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular-route.js"></script>
         
         <script src ="app.js"></script>
-        <script src ="services/services.js"></script>
+        <script src ="services/restservice.js"></script>
+        <script src ="services/accountservice.js"></script>
+        <script src ="services/userservice.js"></script>
         <script src ="services/marketservice.js"></script>
+        <script src ="services/tradeservice.js"></script>
         <script src ="controllers/loginController.js"></script>
         <script src ="controllers/accountController.js"></script>
         <script src ="controllers/marketController.js"></script>
+        <script src ="controllers/tradeController.js"></script>
         <title>MerpTitle</title>
     </head>
     <body ng-app = "myApp">
@@ -22,6 +26,7 @@ and open the template in the editor.
             <li><a href = "#/">Login</a></li>
             <li><a href = "#/account">Account</a></li>
             <li><a href = "#/market">Market</a></li>
+            <li><a href = "#/trade">Trading</a></li>
         </ul>
         
         <div ng-view></div>

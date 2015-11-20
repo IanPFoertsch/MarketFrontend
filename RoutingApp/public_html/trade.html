@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<div class ="trade-container">
+    <h1>Trades</h1>
+
+    <form ng-submit="tradeCtrl.tradeService.submitTrade()" name="tradeForm">
+        <!--Trade Flow: Select bid or ask. If ask, will have to use 
+        drop down list or something similar to restrict sale to securities
+        that the user currently owns.-->
+
+
+
+        <label>Order Type</label>
+        <select ng-model ="tradeCtrl.tradeService.trade.postingType"
+                ng-options ="type for type in tradeCtrl.tradeService.postTypes">
+
+        </select>
+        <p>{{tradeCtrl.tradeService.postTypes}}</p>
+        <label>Symbol</label>
+        <select name="Symbol" ng-model ="tradeCtrl.tradeService.trade.symbol"
+                ng-options ="symbol for symbol in tradeCtrl.symbolArray">
+        </select>
+
+
+
+        <label>Price<input type = "number"
+                           name ="price"
+                           min =0
+                           step =0.01
+                           ng-model = "tradeCtrl.tradeService.trade.price">
+        </label>
+        <label>Volume<input type = "number"
+                            name ="volume"
+                            min =0
+                           step =0.01
+                            ng-model = "tradeCtrl.tradeService.trade.volume">
+        </label>
+
+
+    <input type = "submit"
+           value = "submit">
+
+    </form>
+    
+    
+
+</div>
